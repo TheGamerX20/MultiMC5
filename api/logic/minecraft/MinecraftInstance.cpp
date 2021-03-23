@@ -832,7 +832,8 @@ shared_qobject_ptr<LaunchTask> MinecraftInstance::createLaunchTask(AuthSessionPt
     }
     else
     {
-        process->appendStep(new Update(pptr, Net::Mode::Offline));
+        // OG: process->appendStep(new Update(pptr, Net::Mode::Offline));
+        process->appendStep(new Update(pptr, Net::Mode::Online));
     }
 
     // if there are any jar mods
